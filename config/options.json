@@ -4,7 +4,20 @@
   "bodyColor": "#0b0d13",
   "tailoring": "seagull",
   "allowUpload": true,
-  "product": { "sizes": "未定", "leadTime": "未定", "price": "未定", "shopUrl": "" },
+  "product": { "sizes": "フルオーダー", "leadTime": "1か月～", "price": "50,000円〜", "shopUrl": "" },
+  "pricing": {
+    "base": 50000,
+    "thicknesses": [
+      {"id":"1mm","label":"1mm","extra":0},
+      {"id":"2mm","label":"2mm","extra":5000},
+      {"id":"3mm","label":"3mm","extra":10000}
+    ],
+    "linings": [
+      {"id":"none","label":"なし","extra":0},
+      {"id":"standard","label":"普通","extra":1000},
+      {"id":"quick-dry","label":"乾きやすい","extra":3000}
+    ]
+  },
   "colors": [
     {"name":"グレー","hex":"#8d8f92"},
     {"name":"ネイビー","hex":"#2b3a67"},
@@ -25,6 +38,8 @@
   "defaults": {
     "panelColor":"#8d8f92",
     "heather":true,
+    "thickness":"1mm",
+    "lining":"none",
     "prints":{
       "chest":{"mode":"logo","size":1.2,"text":"BODY GROVE"},
       "back":{"mode":"logo","size":1.25,"text":"BODY GROVE"},

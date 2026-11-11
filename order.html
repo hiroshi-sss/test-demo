@@ -6,19 +6,15 @@
 <title>オーダー | WetSuitsDemo</title>
 <meta name="description" content="ウェットスーツの色とプリントを選び、3Dで仕上がりを確かめられます。">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
-  <script type="module" crossorigin src="./assets/order-BQkoZBeN.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/options-Dfz2t5EH.js">
-  <link rel="stylesheet" crossorigin href="./assets/options-BQbI5bsg.css">
+  <script type="module" crossorigin src="./assets/order-VG-vFbNA.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/options-Bt-MD3N0.js">
+  <link rel="stylesheet" crossorigin href="./assets/options-Cmglh4ph.css">
 </head><body id="top" class="order-page">
 <header class="site-header order-header">
   <a href="./index.html#details" class="back-link">‹ ウェットスーツに戻る</a>
   <a href="./index.html" class="wordmark">WetSuitsDemo</a>
 </header>
-<main class="page">
-  <div class="studio-heading">
-    <h1>オーダー</h1>
-    <p>シーガルの色とプリントを選べます。</p>
-  </div>
+<main class="page" aria-label="オーダー">
   <section class="app" id="studio" aria-label="3D カスタマイズ">
   <div class="stage" id="stage">
     <span class="stage-label">3D PREVIEW</span>
@@ -30,12 +26,21 @@
     </div>
     <div class="hint">移動は右ドラッグか2本指、拡大はホイールかピンチ</div>
     <div class="err" id="err" hidden><img id="fallbackImage" alt="グレーのシーガルの正面見本"><p>3D プレビューを表示できません。初期配色の見本を表示しています。</p></div>
+    <div class="order-price" id="orderPriceRow" hidden>
+      <label for="orderPrice">合計金額</label>
+      <output id="orderPrice" for="thickness lining" aria-live="polite"></output>
+    </div>
   </div>
 
   <aside class="rail">
     <div class="head">
 
-      <h2>デザインを選ぶ</h2>
+      <h2>仕様とデザインを選ぶ</h2>
+    </div>
+
+    <div class="order-specs" id="orderSpecs" hidden>
+      <label class="group" for="thickness"><span class="label">厚み</span><select class="text" id="thickness"></select></label>
+      <label class="group" for="lining"><span class="label">起毛の裏地</span><select class="text" id="lining"></select></label>
     </div>
 
     <div class="group">
@@ -47,7 +52,7 @@
       <div class="row">
         <div>
           <p class="label">選択中の色</p>
-          <div class="readout"><span id="cName">グレー</span> <span id="cHex">#8D8F92</span></div>
+          <div class="readout" id="cName">グレー</div>
         </div>
         <label class="label" for="custom" style="display:flex;flex-direction:column;gap:4px">自由に選ぶ
           <input type="color" id="custom" value="#8d8f92">
@@ -83,6 +88,7 @@
   <div class="group actions">
       <button class="btn primary" type="button" id="share">共有リンクをコピー</button>
       <button class="btn" type="button" id="snapshot" disabled>プレビュー画像を保存</button>
+      <button class="btn primary order-pdf" type="button" id="orderPdf">オーダー用紙をPDFで保存</button>
       <input class="text" type="url" id="shareLink" readonly aria-label="共有リンク" hidden>
       <p id="actionStatus" role="status"></p>
     </div>
