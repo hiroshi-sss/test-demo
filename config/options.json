@@ -6,7 +6,7 @@
   "allowUpload": true,
   "product": { "sizes": "未定", "leadTime": "未定", "price": "未定", "shopUrl": "" },
   "colors": [
-    {"name":"杢グレー","hex":"#8d8f92"},
+    {"name":"グレー","hex":"#8d8f92"},
     {"name":"ネイビー","hex":"#2b3a67"},
     {"name":"ティール","hex":"#1f7a7a"},
     {"name":"コーラル","hex":"#e0604c"},

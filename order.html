@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>オーダー | WetSuitsDemo</title>
+<meta name="description" content="ウェットスーツの色とプリントを選び、3Dで仕上がりを確かめられます。">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script type="module" crossorigin src="./assets/order-BQkoZBeN.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/options-Dfz2t5EH.js">
+  <link rel="stylesheet" crossorigin href="./assets/options-BQbI5bsg.css">
+</head><body id="top" class="order-page">
+<header class="site-header order-header">
+  <a href="./index.html#details" class="back-link">‹ ウェットスーツに戻る</a>
+  <a href="./index.html" class="wordmark">WetSuitsDemo</a>
+</header>
+<main class="page">
+  <div class="studio-heading">
+    <h1>オーダー</h1>
+    <p>シーガルの色とプリントを選べます。</p>
+  </div>
+  <section class="app" id="studio" aria-label="3D カスタマイズ">
+  <div class="stage" id="stage">
+    <span class="stage-label">3D PREVIEW</span>
+    <canvas id="cv" tabindex="0" aria-label="ウェットスーツの3Dモデル。左右キーで回転、上下キーで移動、プラスとマイナスで拡大・縮小できます"></canvas>
+    <div class="views">
+      <button class="btn" id="vFront" type="button">全体（正面）</button>
+      <button class="btn" id="vBack" type="button">背面</button>
+      <button class="btn" id="vSpin" type="button" aria-pressed="true">自動回転</button>
+    </div>
+    <div class="hint">移動は右ドラッグか2本指、拡大はホイールかピンチ</div>
+    <div class="err" id="err" hidden><img id="fallbackImage" alt="グレーのシーガルの正面見本"><p>3D プレビューを表示できません。初期配色の見本を表示しています。</p></div>
+  </div>
+
+  <aside class="rail">
+    <div class="head">
+
+      <h2>デザインを選ぶ</h2>
+    </div>
+
+    <div class="group">
+      <p class="label">パネルの色</p>
+      <div class="swatches" id="swatches"  aria-label="パネルの色"></div>
+    </div>
+
+    <div class="group">
+      <div class="row">
+        <div>
+          <p class="label">選択中の色</p>
+          <div class="readout"><span id="cName">グレー</span> <span id="cHex">#8D8F92</span></div>
+        </div>
+        <label class="label" for="custom" style="display:flex;flex-direction:column;gap:4px">自由に選ぶ
+          <input type="color" id="custom" value="#8d8f92">
+        </label>
+      </div>
+    </div>
+
+    <div class="group">
+      <p class="label" id="printLbl">ロゴ・プリント</p>
+      <div class="seg" id="slotSeg"  aria-label="プリントの位置">
+        <button type="button" class="segbtn"  data-slot="chest" aria-pressed="true">胸</button>
+        <button type="button" class="segbtn"  data-slot="back" aria-pressed="false">背中</button>
+        <button type="button" class="segbtn"  data-slot="sleeve" aria-pressed="false">袖</button>
+      </div>
+      <div class="seg print-modes" id="modeSeg"  aria-label="プリントの種類">
+        <button type="button" class="segbtn"  data-mode="logo" aria-pressed="true">ロゴ</button>
+        <button type="button" class="segbtn"  data-mode="text" aria-pressed="false">文字</button>
+        <button type="button" class="segbtn"  data-mode="upload" aria-pressed="false">画像</button>
+        <button type="button" class="segbtn"  data-mode="none" aria-pressed="false">なし</button>
+      </div>
+      <input type="text" id="chestText" class="text" maxlength="16" value="" autocomplete="off" aria-label="プリントする文字" hidden>
+      <div id="uploadRow" class="uprow" hidden>
+        <label for="logoFile">プリント画像</label>
+        <input type="file" id="logoFile" accept="image/png,image/jpeg">
+        <span class="hint2" id="fileName">背景が透明なPNGがきれいに乗ります</span>
+      </div>
+      <label class="sizerow" for="printSize"><span>サイズ</span><input type="range" id="printSize" min="0.6" max="1.6" step="0.05" value="1"></label>
+    </div>
+
+
+
+
+  <div class="group actions">
+      <button class="btn primary" type="button" id="share">共有リンクをコピー</button>
+      <button class="btn" type="button" id="snapshot" disabled>プレビュー画像を保存</button>
+      <input class="text" type="url" id="shareLink" readonly aria-label="共有リンク" hidden>
+      <p id="actionStatus" role="status"></p>
+    </div>
+  </aside>
+</section>
+</main>
+</body></html>
