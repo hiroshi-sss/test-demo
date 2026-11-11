@@ -1,0 +1,34 @@
+{
+  "model": "models/suit.glb",
+  "logo": "logos/wetsuits-demo.png",
+  "bodyColor": "#0b0d13",
+  "tailoring": "seagull",
+  "allowUpload": true,
+  "product": { "sizes": "未定", "leadTime": "未定", "price": "未定", "shopUrl": "" },
+  "colors": [
+    {"name":"杢グレー","hex":"#8d8f92"},
+    {"name":"ネイビー","hex":"#2b3a67"},
+    {"name":"ティール","hex":"#1f7a7a"},
+    {"name":"コーラル","hex":"#e0604c"},
+    {"name":"マスタード","hex":"#d2a12a"},
+    {"name":"オリーブ","hex":"#5f6b3a"},
+    {"name":"サンド","hex":"#cfc7b4"},
+    {"name":"バーガンディ","hex":"#6e2233"},
+    {"name":"ピンク","hex":"#e78cb1"},
+    {"name":"ダークグリーン","hex":"#204735"}
+  ],
+  "slots": [
+    {"key":"chest","origin":[0.098,1.3115,0],"u":[1,0,0],"v":[0,1,0],"normal":[0,0,1],"dimensions":[0.11,0.023],"resolution":[1024,214],"azimuth":0},
+    {"key":"back","origin":[-0.11,1.407,0],"u":[-0.882948,0.469472,0],"v":[0.469472,0.882948,0],"normal":[0,0,-1],"dimensions":[0.11,0.023],"resolution":[1024,214],"azimuth":3.141592653589793},
+    {"key":"sleeve","origin":[-0.24,1.282,0.008],"u":[0,0,1],"v":[0,1,0],"normal":[-1,0,0],"dimensions":[0.034,0.034],"resolution":[256,256],"azimuth":-1.5707963267948966}
+  ],
+  "defaults": {
+    "panelColor":"#8d8f92",
+    "heather":true,
+    "prints":{
+      "chest":{"mode":"logo","size":1.2,"text":"BODY GROVE"},
+      "back":{"mode":"logo","size":1.25,"text":"BODY GROVE"},
+      "sleeve":{"mode":"logo","size":1,"text":"BODY GROVE"}
+    }
+  }
+}

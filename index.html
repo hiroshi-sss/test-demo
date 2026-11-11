@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ウェットスーツ カラーラボ</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">  <script type="module" crossorigin src="./assets/index-DchNmS6B.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DmqQAJYo.css">
+</head><body>
+<header class="site-header">
+  <a href="./" class="wordmark" aria-label="WetSuitsDemo ホーム">WetSuitsDemo</a>
+  <nav aria-label="ページ内メニュー"><a href="#guide">使い方</a><a href="#details">商品情報</a><a href="#faq">FAQ</a></nav>
+</header>
+<main class="page">
+  <div class="intro">
+    <p class="eyebrow">WETSUIT COLOR LAB</p>
+    <h1>ウェットスーツ カラーラボ</h1>
+    <p>肩まわりの色とプリントを選んで、自分のデザインを3Dで確かめましょう。</p>
+  </div>
+  <section class="app" id="studio" aria-label="3D カスタマイズ">
+  <div class="stage" id="stage">
+    <span class="stage-label">3D PREVIEW</span>
+    <canvas id="cv" tabindex="0" aria-label="ウェットスーツの3Dモデル。左右の矢印キーで回転、プラスとマイナスで拡大・縮小できます"></canvas>
+    <div class="hint">ドラッグで回転・ホイールやピンチで位置を指定して拡大</div>
+    <div class="views">
+      <button class="btn" id="vFront" type="button">正面</button>
+      <button class="btn" id="vBack" type="button">背面</button>
+      <button class="btn" id="vSpin" type="button" aria-pressed="true">自動回転</button>
+    </div>
+    <div class="err" id="err" hidden><img id="fallbackImage" alt="杢グレーの半袖ウェットスーツの正面見本"><p>3D プレビューを表示できません。初期配色の見本を表示しています。</p></div>
+  </div>
+
+  <aside class="rail">
+    <div class="head">
+
+      <h2>デザインを選ぶ</h2>
+    </div>
+
+    <div class="group">
+      <p class="label">パネルの色</p>
+      <div class="swatches" id="swatches"  aria-label="パネルの色"></div>
+    </div>
+
+    <div class="group">
+      <div class="row">
+        <div>
+          <p class="label">選択中の色</p>
+          <div class="readout"><span id="cName">杢グレー</span> <span id="cHex">#8D8F92</span></div>
+        </div>
+        <label class="label" for="custom" style="display:flex;flex-direction:column;gap:4px">自由に選ぶ
+          <input type="color" id="custom" value="#8d8f92">
+        </label>
+      </div>
+      <label class="check" for="heather"><input type="checkbox" id="heather" checked> 杢調の織り柄を付ける</label>
+    </div>
+
+    <div class="group">
+      <p class="label" id="printLbl">ロゴ・プリント</p>
+      <div class="seg" id="slotSeg"  aria-label="プリントの位置">
+        <button type="button" class="segbtn"  data-slot="chest" aria-pressed="true">胸</button>
+        <button type="button" class="segbtn"  data-slot="back" aria-pressed="false">背中</button>
+        <button type="button" class="segbtn"  data-slot="sleeve" aria-pressed="false">袖</button>
+      </div>
+      <div class="seg print-modes" id="modeSeg"  aria-label="プリントの種類">
+        <button type="button" class="segbtn"  data-mode="logo" aria-pressed="true">ロゴ</button>
+        <button type="button" class="segbtn"  data-mode="text" aria-pressed="false">文字</button>
+        <button type="button" class="segbtn"  data-mode="upload" aria-pressed="false">画像</button>
+        <button type="button" class="segbtn"  data-mode="none" aria-pressed="false">なし</button>
+      </div>
+      <input type="text" id="chestText" class="text" maxlength="16" value="" autocomplete="off" aria-label="プリントする文字" hidden>
+      <div id="uploadRow" class="uprow" hidden>
+        <label for="logoFile">プリント画像</label>
+        <input type="file" id="logoFile" accept="image/png,image/jpeg">
+        <span class="hint2" id="fileName">背景が透明なPNGがきれいに乗ります</span>
+      </div>
+      <label class="sizerow" for="printSize"><span>サイズ</span><input type="range" id="printSize" min="0.6" max="1.6" step="0.05" value="1"></label>
+    </div>
+
+
+
+
+  <div class="group actions">
+      <button class="btn primary" type="button" id="share">共有リンクをコピー</button>
+      <button class="btn" type="button" id="snapshot" disabled>プレビュー画像を保存</button>
+      <input class="text" type="url" id="shareLink" readonly aria-label="共有リンク" hidden>
+      <p id="actionStatus" role="status"></p>
+    </div>
+  </aside>
+</section>
+
+
+  <section class="info" id="guide">
+    <h2>使い方</h2>
+    <ol class="steps">
+      <li><h3>色を選ぶ</h3><p>肩・胸・背中上部のパネルを好きな色に。杢調の織り柄も切り替えられます。</p></li>
+      <li><h3>プリントを決める</h3><p>胸と背中にはロゴや文字を入れられます。袖はロゴの有無を選べます。</p></li>
+      <li><h3>お店で注文する</h3><p>気に入ったデザインを保存して、お店で注文するときにご確認ください。</p></li>
+    </ol>
+  </section>
+  <section class="info product" id="details">
+    <div><h2>モデルと注文について</h2><p>半袖フルスーツ（シーガル）<br>チェストジップ、黒ジャージ、膝パッド付き。</p></div>
+    <dl><dt>サイズ展開</dt><dd id="productSizes">未定</dd><dt>納期の目安</dt><dd id="productLeadTime">未定</dd><dt>価格の目安</dt><dd id="productPrice">未定</dd></dl>
+    <div class="shop"><p>ここでは注文できません。</p><a class="btn primary" id="shopLink" hidden>ショップを見る</a><span id="shopStatus">ショップ準備中</span></div>
+  </section>
+  <section class="info" id="faq">
+    <h2>よくある質問</h2>
+    <details><summary>作ったデザインを共有できますか？</summary><p>「共有リンクをコピー」で、色とプリント設定を共有できます。選んだ画像を含めて見せたいときは「プレビュー画像を保存」を使ってください。</p></details>
+    <details><summary>選んだ画像はどこに保存されますか？</summary><p>PNG と JPEG はブラウザ内で表示します。共有リンクを開き直したときは、画像をもう一度選んでください。</p></details>
+    <details><summary>3Dで見た色と実物の色は同じですか？</summary><p>見え方は画面や照明によって変わります。プレビューは配色の組み合わせの確認にお使いください。</p></details>
+  </section>
+</main>
+<footer class="site-footer">WetSuitsDemo <a href="#studio">3D プレビューに戻る ↑</a></footer>
+</body></html>
