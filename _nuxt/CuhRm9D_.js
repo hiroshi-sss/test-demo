@@ -1,0 +1,1 @@
+async function e(e){let t=await fetch(new URL(`config/options.json`,e));if(!t.ok)throw Error(`設定を読み込めませんでした`);return t.json()}export{e as t};
